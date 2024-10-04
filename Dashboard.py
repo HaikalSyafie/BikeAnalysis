@@ -43,7 +43,6 @@ for i, var in enumerate(day_vars):
     # Menghitung total cnt per kategori
     total_cnt = filtered_df.groupby(var)['cnt'].sum().reset_index()
     sns.barplot(data=total_cnt, x=var, y='cnt', palette='Blues_d', ci=None, ax=axes[i])
-    axes[i].set_title(f'Total Penyewaan Berdasarkan {var.capitalize()}', fontsize=16)
     axes[i].set_xlabel(var.capitalize(), fontsize=14)
     axes[i].set_ylabel('Total Penyewaan', fontsize=14)
 
@@ -69,7 +68,6 @@ axes = axes.flatten()
 for i, feature in enumerate(numerical_features):
     if feature in filtered_df.columns and 'cnt' in filtered_df.columns:  # Ensure columns exist
         sns.scatterplot(data=filtered_df, x=feature, y='cnt', color='blue', ax=axes[i])
-        axes[i].set_title(f"Jumlah Penyewaan vs {feature.capitalize()}", fontsize=16)
         axes[i].set_xlabel(feature.capitalize(), fontsize=14)
         axes[i].set_ylabel("Jumlah Penyewaan (cnt)", fontsize=14)
 
