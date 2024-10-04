@@ -46,7 +46,7 @@ else:
 st.subheader("Jumlah penyewaan berdasarkan hari")
 st.write("Diagram ini menunjukkan hubungan antara hari kerja, hari libur dengan jumlah penyewaan sepeda.(pencet tombol expand untuk lebih jelas)")
 
-day_vars = ['hr', 'holiday', 'workingday']
+day_vars = ['hr', 'holiday', 'workingday','weathersit']
 n_day_vars = len(day_vars)  
 fig, axes = plt.subplots(nrows=(n_day_vars + 1) // 2, ncols=2, figsize=(18, 13)) 
 axes = axes.flatten()
@@ -67,7 +67,7 @@ st.pyplot(fig)
 st.subheader("Hubungan parameter Cuaca dengan Jumlah Penyewaan")
 st.write("Di sini kita melihat bagaimana kondisi cuaca mempengaruhi jumlah penyewaan sepeda.(pencet tombol expand untuk lebih jelas)")
 
-numerical_features = ['temp', 'atemp', 'hum', 'windspeed', 'weathersit']
+numerical_features = ['temp', 'atemp', 'hum', 'windspeed']
 n_numerical_features = len(numerical_features)  
 fig, axes = plt.subplots(nrows=(n_numerical_features + 1) // 2, ncols=2, figsize=(18, 13))  
 axes = axes.flatten()
