@@ -3,8 +3,7 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-data_path = r'D:\Bangkit\Analisis\Project2\Dashboard\hour.csv'
-df = pd.read_csv(data_path)
+df = pd.read_csv('hour.csv')
 
 
 df['yr'] = df['yr'].replace({0: 2011, 1: 2012})
