@@ -10,7 +10,7 @@ df['yr'] = df['yr'].replace({0: 2011, 1: 2012})
 
 
 st.title("Dashboard Penyewaan Sepeda")
-st.markdown("### Analisis Penyewaan Sepeda Berdasarkan Data Cuaca dan Kategorikal")
+
 
 
 st.sidebar.header("Filter Data")
@@ -28,8 +28,8 @@ else:
     filtered_df = df[(df['yr'] == year_filter) & (df['mnth'] == month_filter)]
 
 
-st.subheader("Analisis Kategorikal vs Jumlah Penyewaan (cnt)")
-st.write("Analisis ini menunjukkan hubungan antara hari kerja, hari libur, dan jumlah penyewaan sepeda.")
+st.subheader("Jumlah penyewaan berdasarkan hari ")
+st.write("Diagram ini menunjukkan hubungan antara hari kerja, hari libur dengan jumlah penyewaan sepeda.")
 
 day_vars = ['hr', 'holiday', 'workingday']
 n_day_vars = len(day_vars)  
@@ -56,7 +56,7 @@ plt.tight_layout()
 st.pyplot(fig)
 
 
-st.subheader("Hubungan Kondisi Cuaca dengan Jumlah Penyewaan")
+st.subheader("Hubungan parameter Cuaca dengan Jumlah Penyewaan")
 st.write("Di sini kita melihat bagaimana kondisi cuaca mempengaruhi jumlah penyewaan sepeda.")
 
 numerical_features = ['temp', 'atemp', 'hum', 'windspeed', 'weathersit']
